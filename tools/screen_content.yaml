@@ -1,0 +1,81 @@
+identity:
+  name: "lakera_guard"
+  author: "birdlex"
+  label:
+    en_US: "CHKP AI Security"
+    zh_Hans: "CHKP AI Security"
+description:
+  human:
+    en_US: "Screens a piece of text for threats using Lakera Guard."
+    zh_Hans: "使用 Lakera Guard 审查一段文本是否存在威胁。"
+  llm: "This tool screens a given text for threats and returns a flagging decision from Lakera Guard."
+parameters:
+  - name: user_input
+    type: string
+    required: true
+    label:
+      en_US: Text to Screen
+      zh_Hans: 要审查的文本
+    human_description:
+      en_US: "The raw text content you want to screen for threats."
+      zh_Hans: "您想要审查是否存在威胁的原始文本内容。"
+    llm_description: "The user's text input that needs to be screened for potential threats."
+    form: llm
+  - name: project_id
+    type: string
+    required: false
+    label:
+      en_US: Project ID
+      zh_Hans: 项目 ID
+    human_description:
+      en_US: "The ID of the Lakera Guard project to use for screening."
+      zh_Hans: "用于审查的 Lakera Guard 项目的 ID。"
+    llm_description: "The unique identifier for the Lakera Guard project."
+    form: form
+  - name: payload
+    type: boolean
+    required: false
+    label:
+      en_US: Include Payload
+      zh_Hans: 包含有效载荷
+    human_description:
+      en_US: "Set to true to include the payload in the response."
+      zh_Hans: "设置为 true 以在响应中包含有效载荷。"
+    llm_description: "Whether to include the detailed payload in the screening response."
+    form: form
+  - name: breakdown
+    type: boolean
+    required: false
+    label:
+      en_US: Include Breakdown
+      zh_Hans: 包含分解信息
+    human_description:
+      en_US: "Set to true to include a breakdown of the flagging decision in the response."
+      zh_Hans: "设置为 true 以在响应中包含标记决策的分解信息。"
+    llm_description: "Whether to include a detailed breakdown of the flagging decision."
+    form: form
+  - name: metadata
+    type: string
+    required: false
+    label:
+      en_US: Metadata
+      zh_Hans: 元数据
+    human_description:
+      en_US: "A JSON string containing metadata for the request. Example: '{\"user_id\": \"123\"}'"
+      zh_Hans: "包含请求元数据的 JSON 字符串。示例：'{\"user_id\": \"123\"}'"
+    llm_description: "Optional JSON string with metadata about the request."
+    form: form
+  - name: dev_info
+    type: boolean
+    required: false
+    label:
+      en_US: Developer Info
+      zh_Hans: 开发者信息
+    human_description:
+      en_US: "Set to true to include developer information in the response."
+      zh_Hans: "设置为 true 以在响应中包含开发者信息。"
+    llm_description: "Whether to include developer-specific information in the response."
+    form: form
+extra:
+  python:
+    source: tools/screen_content.py

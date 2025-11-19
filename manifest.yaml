@@ -1,0 +1,37 @@
+version: 0.0.1
+type: plugin
+author: birdlex
+name: chkp-lakera-for-dify
+label:
+  en_US: Check Point
+  ja_JP: Check Point
+  zh_Hans: Check Point
+  pt_BR: Check Point
+description:
+  en_US: Check Point Lakera AI Security
+  ja_JP: Check Point Lakera AI Security
+  zh_Hans: Check Point Lakera AI Security
+  pt_BR: Check Point Lakera AI Security
+icon: logo.svg
+icon_dark: logo-dark.svg
+resource:
+  memory: 15728640
+  permission:
+    tool:
+      enabled: true
+plugins:
+  tools:
+    - provider/check_point_ai_security.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: null
+created_at: 2025-11-14T16:38:44.027372998+08:00
+privacy: PRIVACY.md
+verified: false
