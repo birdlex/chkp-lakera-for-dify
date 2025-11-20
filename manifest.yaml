@@ -15,7 +15,7 @@ description:
 icon: logo.svg
 icon_dark: logo-dark.svg
 resource:
-  memory: 15728640
+  memory: 10485760
   permission:
     tool:
       enabled: true
